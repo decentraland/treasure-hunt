@@ -1,0 +1,7 @@
+.Bold {
+  font-weight: bold;
+}
+
+.Bold.Bold_Primary {
+  color: #ff2d55;
+}

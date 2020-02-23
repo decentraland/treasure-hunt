@@ -1,0 +1,107 @@
+{
+  "contest": {
+    "meta": {
+      "title": "Decentraland Treasure Hunt",
+      "description": ""
+    },
+    "main": {
+      "title_intro": "Decentraland",
+      "title": "Creator Contest",
+      "subtitle": "Presentando los Smart Items",
+      "date": "Diciembre 2-15",
+      "video": "Ver Video",
+      "description": "Únete al Creator Contest de Decentraland, diseña las mejores escenas interactivas y compite por una chance de ganar <b>$50,000 dólares en premios.</b>"
+    },
+    "what_is": {
+      "title": "¿Qué es el Creator Contest?",
+      "description": "Muestra tus increíbles creaciones en Decentraland y sé recompensado en grande por tus esfuerzos."
+    },
+    "prizes": {
+      "plus": "Plus",
+      "qualified_scene": "por escena que califique",
+      "note": "Los premios que superen los 50,000 MANA están sujetos a un contrato de vesting irrevocable de 6 meses de duración."
+    },
+    "cards": {
+      "builder": {
+        "title": "El Builder",
+        "description": "El Builder es el primer editor drag-and-drop de Decentraland, haciendo súper fácil la creación de tu mundo virtual. Con el Builder, cualquiera puede crear escenas interactivas para jugar con tus amigos.",
+        "cta": "Prueba el Builder"
+      },
+      "smart_items": {
+        "title": "Presentando los Smart Items",
+        "description": "Los Smart Items permite que los creativos armen escenas interactivas de manera fácil. Sólo utilizando tu cursor, puedes arrastrar y configurar el comportamiento de los ítems que componen tu escena. Encontrarás estos Smart Items dentro del Builder, y al utilizarlos tu creación podrá participar del Creator Contest.",
+        "cta": ""
+      },
+      "custom_assets": {
+        "title": "Assets Personalizados",
+        "description": "Hace poco, hemos presentado los Assets Personalizados en Decentraland; es decir, ahora puedes añadir tus propios modelos 3D en tus escenas.",
+        "cta": "Leer más"
+      },
+      "tutorial": {
+        "title": "¿Qué puedo construir?",
+        "description": "¡Tu imaginación es el único límite! Las creaciones de nuestro más reciente Game Jam es un lugar excelente para empezar a buscar inspiración.",
+        "cta": "Ver Ejemplos del Game Jam",
+        "cta_secondary": ""
+      }
+    },
+    "judges": {
+      "title": "Conoce a los Jueces",
+      "list": [
+        {
+          "name": "Mi Mundo Alex",
+          "description": "Cartoonist",
+          "image": "https://graph.facebook.com/v5.0/mimundoalex/picture?height=240",
+          "twitter": "https://twitter.com/mimundoalex",
+          "facebook": "https://www.facebook.com/mimundoalex/",
+          "linkedin": ""
+        },
+        {
+          "name": "Carl Fravel",
+          "description": "Decentraland Mentor and Professor at VR Acadamy, Decentraland University",
+          "image": "https://pbs.twimg.com/profile_images/808344559298211842/u22xLydW_400x400.jpg",
+          "twitter": "https://twitter.com/carlfravel",
+          "facebook": "",
+          "linkedin": "http://linkedin.com/in/cfravel"
+        },
+        {
+          "name": "Riorio",
+          "description": "Founder of DCL Plazas",
+          "image": "/img/riorio-avatar.png",
+          "twitter": "https://twitter.com/dcl_plazas",
+          "facebook": "",
+          "linkedin": ""
+        }
+      ]
+    },
+    "more_info": {
+      "title": "Más información",
+      "items": [
+        {
+          "title": "¿Cuándo comienza el Contest?",
+          "description": "El concurso de creatividad empieza el 2 de Diciembre y dura hasta el 15 de Diciembre. Los ganadores serán anunciados dos semanas luego de terminado el evento."
+        },
+        {
+          "title": "¿Quién es elegible para participar?",
+          "description": "Cualquiera con una dirección de correo electronico y ganas de crear contenido mágico puede participar del Creator Contest."
+        },
+        {
+          "title": "¿Cómo hago que mis creaciones sean interactivas?",
+          "description": "Los Smart Items son objetos que puedes arrastrar con tu cursor para añadirle componentes interactivos a tu escena 3D, así como personalizarla a tu gusto, todo en unos pocos click. Mantente atento para ver nuestros videos tutoriales y aprender más sobre cómo crear escenas interactivas."
+        },
+        {
+          "title": "¿Necesito saber cómo programar?",
+          "description": "La mejor parte del Creator Contest, es que no se requiere saber programar. El Builder es un creador de contenido 3D que sólo requiere de tu cursor, permitiéndole a cualquiera crear contenido interactivo de lo más divertido. Los Smart Items vienen incluidos dentro del Builder, para que puedas añadirlos a tus escenas 3D. Todo en pocos clicks!"
+        }
+      ]
+    },
+    "subscribe": {
+      "title": "Mantente actualizado",
+      "description": "Regístrate para enterarte de las últimas novedades y darle forma a Decentraland!",
+      "placeholder": "Ingresa tu correo eléctronico.",
+      "cta": "Registrarse",
+      "note": "Al registrarte estás aceptando recibir novedades sobre el Creator Contest.",
+      "confirm": "Gracias por registrarte!",
+      "confirm_note": "Te mantendremos informado con novedades acerca del evento."
+    }
+  }
+}

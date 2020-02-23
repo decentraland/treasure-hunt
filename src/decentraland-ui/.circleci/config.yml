@@ -1,0 +1,95 @@
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10
+
+    working_directory: /tmp/ui
+
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "package-lock.json" }}
+      - run:
+          name: Install node dependencies
+          command: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: dependencies-{{ checksum "package-lock.json" }}
+      - run:
+          name: Build library
+          command: npm run build
+      - save_cache:
+          paths:
+            - lib
+          key: lib-{{ .Branch }}-{{ .Revision }}
+
+  deploy:
+    docker:
+      - image: circleci/node:10
+
+    working_directory: /tmp/ui
+
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "package-lock.json" }}
+      - run:
+          name: Install node dependencies
+          command: npm install
+      - restore_cache:
+          keys:
+            - lib-{{ .Branch }}-{{ .Revision }}
+      - run:
+          name: Build storybook
+          command: npm run build:storybook
+      - run:
+          name: Copy styles from lib
+          command: cp ./lib/*.css ./storybook-static
+      - run:
+          name: Deploy to now.sh
+          command: npm init --yes && npm install now --no-save && cd storybook-static && ../node_modules/.bin/now --token $NOW_TOKEN --scope=decentraland --target=production
+
+  release:
+    docker:
+      - image: circleci/node:10
+
+    working_directory: /tmp/ui
+
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - lib-{{ .Branch }}-{{ .Revision }}
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "package-lock.json" }}
+      - run:
+          name: Install node dependencies
+          command: npm install
+      - run:
+          name: Semantic release
+          command: npm run semantic-release
+
+workflows:
+  version: 2
+  build-deploy-release:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
+      - release:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master

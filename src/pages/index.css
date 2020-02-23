@@ -1,0 +1,221 @@
+:root {
+  --background: white;
+  --background-secondary: #f3f2f5;
+}
+
+body {
+  background: var(--background-secondary);
+}
+
+.container-background {
+  background: var(--background);
+  width: 100%;
+}
+
+.dcl.hero {
+  min-height: 800px;
+  background: #000;
+  overflow: visible;
+  border: 0;
+  margin: 0;
+}
+
+.dcl.hero .hero-content {
+  z-index: 0;
+  overflow: visible;
+  background: #000
+    url("https://decentraland.org/blog/images/banners/specialnfts.png") center
+    center;
+  opacity: 0.75;
+  filter: blur(0.5rem);
+  background-size: cover;
+}
+/* .dcl.hero .hero-content canvas {
+  filter: invert(1) opacity(0.5) hue-rotate(215deg);
+} */
+
+.dcl.hero .hero-actions .ui.button {
+  text-transform: uppercase;
+  width: 235px;
+  border: solid 1px rgba(115, 110, 125, 0.32);
+}
+.dcl.hero .hero-actions .ui.button.primary {
+  border: 0;
+}
+
+.dcl.hero .ui.container {
+  max-width: 800px !important;
+}
+
+.dcl.hero .ui.header.hero-title {
+  margin-bottom: 32px;
+}
+
+.dcl.navbar.initial .ui.menu .item,
+.dcl.hero .MainTitle,
+.dcl.hero .SubTitle,
+.dcl.hero .Paragraph {
+  color: white;
+}
+
+.dcl.hero .hero-title .MainTitle {
+  margin-bottom: 6px;
+}
+
+.dcl.hero .hero-title .SubTitle {
+  line-height: 1em;
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dcl.hero .hero-actions.hero-subscribe {
+  flex-wrap: wrap;
+}
+
+.dcl.hero .hero-actions.hero-subscribe .ui input,
+.dcl.hero .hero-actions.hero-subscribe .ui.button {
+  margin-top: 24px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.dcl.hero .hero-actions.hero-subscribe .ui input {
+  font-size: 16px;
+}
+
+.Subscribe .ui.input {
+  margin: 0 16px;
+}
+
+.Subscribe .ui.input input {
+  color: var(--secondary-text);
+  background: var(--secondary);
+  font-size: 17px;
+  padding: 15px;
+}
+
+.dcl.hero .hero-actions.hero-subscribe .ui.input {
+  width: 420px;
+}
+
+.dcl.hero .hero-actions.hero-subscribe .ui.card {
+  width: 600px;
+  background: transparent;
+  border: 2px solid var(--card);
+  text-align: center;
+  padding: 15px;
+}
+
+.dcl.hero .hero-actions.hero-subscribe .ui.card .Paragraph {
+  font-size: 17px;
+}
+
+.ui.container.subscribe .Subscribe .ui.input {
+  flex: 1 1 100%;
+}
+
+.ui.container.subscribe .Subscribe {
+  margin-bottom: 16px;
+}
+
+.dcl.hero .hero-actions.hero-note {
+  color: var(--secondary-text);
+}
+
+.ui.container.cards .ui.grid {
+  width: 100%;
+}
+
+.ui.container.cards .ui.card,
+.ui.container.subscribe .ui.card {
+  padding: 50px 66px;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+.ui.container.cards .ui.card .ui.grid .row,
+.ui.container.cards .ui.card .ui.grid .column {
+  padding: 0;
+}
+
+.ui.container.cards .ui.card .Link {
+  margin: 1em 48px 0 0;
+  display: inline-block;
+}
+
+.ui.container.scenes {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.ui.container.scenes .reward {
+  display: inline-block;
+  position: relative;
+  margin: 0.5rem 1rem 0 0;
+  width: 125px;
+  height: 125px;
+}
+
+.ui.container.scenes .reward .label {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0rem 0.4rem 0.2rem;
+  border-radius: 8px 0 8px 0;
+  font-weight: bold;
+  color: white;
+}
+
+.ui.container.scenes .reward img {
+  border-radius: 8px;
+  border: 0.3rem solid transparent;
+}
+
+.ui.container.scenes .reward.common img {
+  border-color: #bed2d2;
+}
+
+.ui.container.scenes .reward.common .label {
+  background-color: #bed2d2;
+}
+
+.ui.container.scenes .reward.uncommon img {
+  border-color: #ff8563;
+}
+
+.ui.container.scenes .reward.swanky img {
+  border-color: #3ad682;
+}
+
+.ui.container.scenes .reward.epic img {
+  border-color: #6397f2;
+}
+
+.ui.container.scenes .reward.legendary img {
+  border-color: #a657ed;
+}
+
+.ui.container.scenes .reward.mythic img {
+  border-color: #ff63e1;
+}
+
+.ui.container.scenes .reward.unique img {
+  border-color: #ff63e1;
+}
+
+@media only screen and (max-width: 767px) {
+  .dcl.hero {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .dcl.hero .ui.container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .dcl.hero .hero-title .SubTitle {
+    font-size: 21px;
+  }
+}

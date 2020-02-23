@@ -1,0 +1,58 @@
+.Judge {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  max-width: 320px;
+  padding: 0 50px;
+  color: var(--text);
+}
+
+.Judge .Judge__Image {
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  background-color: var(--card);
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-stretch: normal;
+  font-style: normal;
+  margin-bottom: 24px;
+}
+
+.Judge.Judge--pending .Judge__Image {
+  background-size: 75%;
+  background-position: bottom center;
+}
+
+.Judge .Judge__Name {
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.43;
+  letter-spacing: 0.32px;
+  margin-bottom: 4px;
+}
+
+.Judge .Judge__Description {
+  font-size: 17px;
+  font-weight: 300;
+  font-stretch: normal;
+  line-height: 1.53;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.Judge .Judge__Link {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.38;
+  text-align: right;
+  text-transform: uppercase;
+  margin: 32px;
+}
+
+@media only screen and (max-width: 767px) {
+  .Judge {
+    max-width: 100%;
+  }
+}

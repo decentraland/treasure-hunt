@@ -1,0 +1,107 @@
+{
+  "contest": {
+    "meta": {
+      "title": "Decentraland 创建大赛",
+      "description": "参加 Decentraland 创建大赛，设计和建构精彩的互动场景，来分享总价值五万美金的奖励"
+    },
+    "main": {
+      "title_intro": "Decentraland",
+      "title": "创建大赛",
+      "subtitle": "推介 Smart Items",
+      "date": "12月2日～15日",
+      "video": "观赏视频",
+      "description": "参加 Decentraland 创建大赛，设计和建构精彩的互动场景，来分享<b>总价值五万美金</b>的奖励"
+    },
+    "what_is": {
+      "title": "什么是创建大赛?",
+      "description": "在 Decentraland 展示您的惊人创建，为您的努力获得丰厚报酬。"
+    },
+    "prizes": {
+      "plus": "Plus",
+      "qualified_scene": "per qualifying scene",
+      "note": "MANA awards above 50,000 MANA are subject to an irrevocable 6-month vesting schedule."
+    },
+    "cards": {
+      "builder": {
+        "title": "关于 Builder",
+        "description": "作交互式内容来托管在 LAND 上，并使 Metaverse 充满生命力。",
+        "cta": "试用 Builder"
+      },
+      "smart_items": {
+        "title": "Smart Items 简介",
+        "description": "Smart Items（可交互物品）使创建者无需编码即可轻松为场景添加互动乐趣。只需拖放项目，然后配置其行为即可。您将在Decentraland 的 Builder 的 Item Catalog 中找到 Smart Items。而您必须将它们用作您创建的一部分，方能符合参赛资格。",
+        "cta": "Read docs"
+      },
+      "custom_assets": {
+        "title": "Custom Assets",
+        "description": "我们最近在 Decentraland 引入了 Custom Asset Packs（自定义资产包），代表您可创建自己的独特资产并将其上传到 Metaverse，以进行真正个性化的创建。",
+        "cta": "阅读更多"
+      },
+      "tutorial": {
+        "title": "我可以建造什么？",
+        "description": "最终，您可以想像出任何有趣的互动体验。我们最近的 Game Jam 是一个很好的灵感起点。",
+        "cta": "查看 Game Jam 实例",
+        "cta_secondary": ""
+      }
+    },
+    "judges": {
+      "title": "认识评审",
+      "list": [
+        {
+          "name": "Mi Mundo Alex",
+          "description": "Cartoonist",
+          "image": "https://graph.facebook.com/v5.0/mimundoalex/picture?height=240",
+          "twitter": "https://twitter.com/mimundoalex",
+          "facebook": "https://www.facebook.com/mimundoalex/",
+          "linkedin": ""
+        },
+        {
+          "name": "Carl Fravel",
+          "description": "Decentraland Mentor and Professor at VR Acadamy, Decentraland University",
+          "image": "https://pbs.twimg.com/profile_images/808344559298211842/u22xLydW_400x400.jpg",
+          "twitter": "https://twitter.com/carlfravel",
+          "facebook": "",
+          "linkedin": "http://linkedin.com/in/cfravel"
+        },
+        {
+          "name": "Riorio",
+          "description": "Founder of DCL Plazas",
+          "image": "/img/riorio-avatar.png",
+          "twitter": "https://twitter.com/dcl_plazas",
+          "facebook": "",
+          "linkedin": ""
+        }
+      ]
+    },
+    "more_info": {
+      "title": "更多信息",
+      "items": [
+        {
+          "title": "创建大赛何时开始？",
+          "description": "这项创意活动将于12月2日开始，一直持续到12月15日。获奖者将在活动结束后的两周内公布。"
+        },
+        {
+          "title": "谁可参赛？",
+          "description": "任何拥有电邮并渴望创建出色的交互式内容的人都可参赛。"
+        },
+        {
+          "title": "如何使我的创建互动？",
+          "description": "Smart Items（可交互物品）的拖放物品功能可让您在创建过程中添加酷炫的交互式元素，并使它们个性化，而无需编写代码。请继续关注我们的视频教程，为您提供有关创建过程的更多见解。"
+        },
+        {
+          "title": "我需要知道如何编码吗？",
+          "description": "这是关于创建大赛的最好的事情-非一定需要拥有编码能力（“ The Builder is”）。Decentraland 的拖放内容创建功能，允许任何人创建很酷的交互式内容。Smart Items（可交互物品）已预加载到 Item Catalog（物品目录）中，以便您添加到场景中。无需编码！"
+        }
+      ]
+    },
+    "subscribe": {
+      "title": "保持关注进展",
+      "description": "注册以获取比赛最新资讯，并准备好协助建构 Metaverse!",
+      "placeholder": "输入您的电邮",
+      "cta": "注册",
+      "note": "注册后，您将自动订阅比赛相关信息。",
+      "confirm": "感谢您的注册！",
+      "confirm_note": "我们将为您提供相关活动的最新消息。"
+    }
+  }
+}

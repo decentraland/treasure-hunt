@@ -1,0 +1,85 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10-browsers
+    working_directory: /tmp/dao.decentraland.org
+    environment:
+      NODE_ENV: production
+    steps:
+      - checkout
+      - run:
+          name: Run NPM
+          command: |
+            npm ci && \
+            npm run build
+      - save_cache:
+          name: Save the built files
+          paths:
+            - public
+          key: build-{{ .Revision }}
+
+  deploy-on-pr:
+    docker:
+      - image: circleci/node:10-browsers
+    working_directory: /tmp/dao.decentraland.org
+    steps:
+      - restore_cache:
+          name: Restore built files
+          keys:
+            - build-{{ .Revision }}
+      - run: sudo apt-get -y -qq install awscli curl
+      - run:
+          name: Configure DEV AWS Keys
+          command: |
+            aws configure set aws_access_key_id ${AWS_DEV_ACCESS_KEY_ID} && aws configure set aws_secret_access_key ${AWS_DEV_SECRET_ACCESS_KEY}
+      - run:
+          name: Deploy to S3 (.zone)
+          command: cd public && aws s3 sync . s3://dao.decentraland.zone/
+      - run:
+          name: Invalidate cloudflare cache .zone
+          command: curl ${PURGE_CACHE_ZONE}
+
+  deploy-prd:
+    docker:
+      - image: circleci/node:10-browsers
+    working_directory: /tmp/dao.decentraland.org
+    steps:
+      - restore_cache:
+          name: Restore built files
+          keys:
+            - build-{{ .Revision }}
+      - run: sudo apt-get -y -qq install awscli curl
+      - run:
+          name: Configure PRD AWS Keys
+          command: |
+            aws configure set aws_access_key_id ${AWS_PRD_ACCESS_KEY_ID} && aws configure set aws_secret_access_key ${AWS_PRD_SECRET_ACCESS_KEY}
+      - run:
+          name: Deploy to S3 (.org)
+          command: cd public && aws s3 sync . s3://dao.decentraland.org/
+      - run:
+          name: Invalidate cloudflare cache .org
+          command: curl ${PURGE_CACHE_ORG}
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: /(.*)/
+      - deploy-on-pr:
+          requires:
+            - build
+          filters:
+            branches:
+              ignore:
+                - master
+      - deploy-prd:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - master

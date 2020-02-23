@@ -1,0 +1,79 @@
+{
+  "name": "dao.decentraland.org",
+  "private": true,
+  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "version": "0.1.0",
+  "engines": {
+    "node": "10.x"
+  },
+  "dependencies": {
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.4.4",
+    "@babel/plugin-proposal-optional-chaining": "^7.6.0",
+    "@types/isomorphic-fetch": "0.0.35",
+    "@types/node": "^12.11.7",
+    "@types/react": "^16.9.11",
+    "@types/react-dom": "^16.9.3",
+    "@types/react-helmet": "^5.0.14",
+    "@types/react-intl": "^3.0.0",
+    "@types/segment-analytics": "0.0.32",
+    "@types/validator": "^10.11.3",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "babel-preset-gatsby": "^0.2.21",
+    "balloon-css": "^1.0.3",
+    "ethereum-blockies": "^0.1.1",
+    "framer-motion": "^1.6.15",
+    "gatsby": "^2.17.6",
+    "gatsby-cli": "^2.8.30",
+    "gatsby-image": "^2.2.30",
+    "gatsby-plugin-i18n": "^1.0.1",
+    "gatsby-plugin-intl": "^0.3.1",
+    "gatsby-plugin-load-script": "^1.0.6",
+    "gatsby-plugin-manifest": "^2.2.25",
+    "gatsby-plugin-offline": "^3.0.17",
+    "gatsby-plugin-react-helmet": "^3.1.13",
+    "gatsby-plugin-sass": "^2.1.20",
+    "gatsby-plugin-segment-js": "^3.0.1",
+    "gatsby-plugin-sharp": "^2.2.34",
+    "gatsby-plugin-typescript": "^2.1.15",
+    "gatsby-source-filesystem": "^2.1.35",
+    "gatsby-transformer-sharp": "^2.3.1",
+    "install": "^0.13.0",
+    "isomorphic-fetch": "^2.2.1",
+    "node-sass": "^4.13.0",
+    "npm": "^6.13.0",
+    "parallax-js": "^3.1.0",
+    "prettier": "^1.18.2",
+    "prop-types": "^15.7.2",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-helmet": "^5.2.1",
+    "react-helmet-prepend": "^5.2.1",
+    "react-tile-map": "^0.3.1",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.88.1",
+    "three": "^0.112.1",
+    "typed.js": "^2.0.11",
+    "typescript": "^3.7.3",
+    "validator": "^12.0.0"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  }
+}

@@ -1,0 +1,23 @@
+.Modal,
+.Modal .Modal__Background {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.Modal {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.Modal .Modal__Background {
+  position: absolute;
+  cursor: pointer;
+}
+.Modal .Modal__Content {
+  position: relative;
+}

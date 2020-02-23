@@ -1,0 +1,37 @@
+.Paragraph {
+  color: var(--text);
+  font-size: 21px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.81;
+  letter-spacing: 0.3px;
+}
+
+.Paragraph.Paragraph--secondary {
+  color: var(--secondary-text);
+}
+
+.Paragraph.Paragraph--small {
+  font-size: 17px;
+}
+
+@media only screen and (max-width: 767px) {
+  .Paragraph {
+    font-size: 21px;
+  }
+
+  .Paragraph.Paragraph--small {
+    font-size: 17px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .Paragraph {
+    font-size: 17px;
+  }
+
+  .Paragraph.Paragraph--small {
+    font-size: 17px;
+  }
+}

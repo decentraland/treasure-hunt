@@ -1,0 +1,76 @@
+.Place {
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 32px 0;
+}
+
+.Place .Place__Box {
+  width: 93px;
+  height: 93px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background-color: #36323c;
+  border: 3px solid #36323c;
+  text-transform: uppercase;
+}
+
+.Place.Place--type-medal .Place__Box {
+  border-radius: 100%;
+}
+
+.Place.Place--color-gold .Place__Box {
+  background-color: #ff9801;
+  border-color: #ff9801;
+}
+
+.Place.Place--color-silver .Place__Box {
+  background-color: #9fa7b0;
+  border-color: #9fa7b0;
+}
+
+.Place.Place--color-bronze .Place__Box {
+  background-color: #fe6f17;
+  border-color: #fe6f17;
+}
+
+.Place.Place--color-outline .Place__Box {
+  background-color: transparent;
+  color: #36323c;
+}
+
+.Place .Place__Box .Place__Position {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.Place .Place__Box .Place__Position .Place__Position__Digit {
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: bold;
+}
+
+.Place.Place--ordinal .Place__Box .Place__Position .Place__Position__Digit {
+  font-size: 32px;
+  line-height: 26px;
+}
+
+.Place.Place--ordinal .Place__Box .Place__Position .Place__Position__Note {
+  font-size: 13px;
+  line-height: 13px;
+  position: absolute;
+  left: 100%;
+}
+
+.Place .Place__Box .Place__Description {
+  display: flex;
+  font-size: 13px;
+}

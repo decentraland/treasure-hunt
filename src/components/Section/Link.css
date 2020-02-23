@@ -1,0 +1,9 @@
+.Link {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.Link .icon {
+  font-size: inherit;
+  vertical-align: middle;
+}

@@ -1,0 +1,12 @@
+:root {
+  --secondary-text: #736e7d;
+  --border-radius: 8px;
+}
+
+.ui.input input {
+  border-radius: var(--border-radius);
+}
+
+.ui.button.primary .ui.active.loader::after {
+  border-color: white transparent transparent !important;
+}
