@@ -45,13 +45,62 @@ const closedChest = require("~/images/closed-chest.png")
 const almostOpenedChest = require("~/images/almost-opened-chest.png")
 const openedChest = require("~/images/opened-chest.png")
 
+const images: { [key: string]: string | undefined } = {
+  'After the Flood: Two Towers': require("../images/After the Flood.jpg"),
+  'Asian Plaza': require("../images/Asian Plaza.jpg"),
+  'Back To The Past': require("../images/Back To The Past.jpg"),
+  'Barter Town': require("../images/Barter Town.jpg"),
+  'Battleracers': require("../images/Battleracers.jpg"),
+  'BlockRunner': require("../images/BlockRunner.jpg"),
+  'Chateau satoshi': require("../images/Chateau satoshi.jpg"),
+  'Coin Rush': require("../images/CoinRush.jpg"),
+  'Aeyon Death Run Project': require("../images/Death Run.jpg"),
+  'Dinosaur hunt': require("../images/Dinosaur hunt Can you find them all_.jpg"),
+  'Dragon race': require("../images/Dragon Race.jpg"),
+  'Eden Project': require("../images/Eden Project_.jpg"),
+  'Enchannelled Wood': require("../images/Enchannelled Wood.jpg"),
+  'Fantasy World of Endless Time': require("../images/Fantasy World of Endless Time.jpg"),
+  'Forest Plaza': require("../images/Forest Plaza.jpg"),
+  'Fruit Catcher': require("../images/Fruit Catcher.jpg"),
+  'Gamer Plaza': require("../images/Gamer Plaza.jpg"),
+  'Gingerbread breakdown ': require("../images/Gingerbread breakdown.jpg"),
+  'Infinity Engine': require("../images/Infinity Engine.jpg"),
+  'Koko Jones': require("../images/Koko Jones.jpg"),
+  'Matic': require("../images/Matic.jpg"),
+  'Maze Race': require("../images/Maze Run.jpg"),
+  'Medieval Plaza': require("../images/Medieval Plaza.jpg"),
+  'Merlin\'s Keep': require("../images/Merlin_s Keep.jpg"),
+  'Midas Car Park': require("../images/Midas Car Park.jpg"),
+  'MoonShot': require("../images/MoonShot.jpg"),
+  'Museum District ': require("../images/Museum District.jpg"),
+  'Neo DCL City': require("../images/Neo DCL City.jpg"),
+  'Present Predicament': require("../images/Present Predicament.jpg"),
+  'Quest of an Alcoholic Scarecrow': require("../images/Quest of an Alcoholic Scarecrow.jpg"),
+  'Salmonomicon': require("../images/Salmonomicon.jpg"),
+  'Serenity Casino': require("../images/Serenity Casino.jpg"),
+  'SoYou': require("../images/SoYou.jpg"),
+  'Space Odyssey': require("../images/Space Odyssey.jpg"),
+  'Space Office': require("../images/Space Office.jpg"),
+  'Techno Oasis': require("../images/Techno Oasis_.jpg"),
+  'The Cat Came Back': require("../images/The Cat Came Back.jpg"),
+  'The Farm': require("../images/The Farm.jpg"),
+  'The Walk': require("../images/The Walk.jpg"),
+  'The floor is lava': require("../images/The floor is lava.jpg"),
+  'Toki Land': require("../images/Toki Land.jpg"),
+  'Tomb Chaser': require("../images/Tomb Chaser.jpg"),
+  'Vegas City District': require("../images/Vegas City District.jpg"),
+  'Vertical garden': require("../images/Vertical garden.jpg"),
+  'Volcano': require("../images/Volcano.jpg"),
+  'Wonder World': require("../images/Wonder World.jpg"),
+}
+
 
 const scenes = [
   { "name": "The Farm", "x": -3, "y": -33 },
   { "name": "Gamer Plaza", "x": 72, "y": -9 },
   { "name": "Serenity Casino", "x": -55, "y": 143 },
   { "name": "MoonShot", "x": 58, "y": 2 },
-  { "name": "Blockrunner", "x": 61, "y": -27 },
+  { "name": "BlockRunner", "x": 61, "y": -27 },
   { "name": "Fantasy World of Endless Time", "x": -49, "y": -41 },
   { "name": "The Cat Came Back", "x": 36, "y": 46 },
   { "name": "Infinity Engine", "x": -71, "y": -38 },
@@ -76,7 +125,7 @@ const scenes = [
   { "name": "Tomb Chaser", "x": 12, "y": 46 },
   { "name": "Merlin's Keep", "x": -5, "y": -16 },
   { "name": "Aeyon Death Run Project", "x": 105, "y": -21 },
-  { "name": "Quest of an Alcoholic Scarecrow_", "x": -11, "y": -30 },
+  { "name": "Quest of an Alcoholic Scarecrow", "x": -11, "y": -30 },
   { "name": "Back To The Past", "x": -49, "y": -49 },
   { "name": "Maze Race", "x": 113, "y": -7 },
   { "name": "Asian Plaza", "x": 52, "y": -71 },
@@ -282,9 +331,10 @@ export default function IndexPage(props: any) {
               const hasRewardItems = reward?.rewardItems && reward.rewardItems.length > 0
               const rewardsItems = (reward?.rewardItems || [])
               const hasPendingRewardItems = !rewardsItems.some(item => item.completed)
+              const image = images[scene.name as any] as any || `https://api.decentraland.org/v1/parcels/${scene.x}/${scene.y}/map.png`
               return <Grid.Row key={scene.name} verticalAlign="top">
                 <Grid.Column mobile={4}>
-                  <div style={{ background: `url("https://api.decentraland.org/v1/parcels/${scene.x}/${scene.y}/map.png") center center` }}>
+                  <div style={{ background: `url("${image}") center center`, backgroundSize: 'cover' }}>
                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNiYAAAAAkAAxkR2eQAAAAASUVORK5CYII=" width={500} height={500} style={{ maxWidth: '200px', width: '100%', height: 'auto' }} />
                   </div>
                   {/* <img src={`https://api.decentraland.org/v1/parcels/${scene.x}/${scene.y}/map.png`} width={500} height={500} style={{ maxWidth: '300px', width: '100%', height: 'auto' }} /> */}
@@ -292,7 +342,7 @@ export default function IndexPage(props: any) {
                 <Grid.Column mobile={9} style={{ height: '100%' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
                     <div>
-                      <SubTitle>{scene.name} <Link href={`https://play.decentraland.org/?position=${scene.x}%2C${scene.x}`}>({scene.x},{scene.x})</Link></SubTitle>
+                      <SubTitle>{scene.name} <Link href={`https://play.decentraland.org/?position=${scene.x}%2C${scene.y}`}>({scene.x},{scene.y})</Link></SubTitle>
                       {hasRewards && rewardsItems.length === 0 && <div><Paragraph secondary>Sorry! This chest was empty</Paragraph></div>}
                     </div>
                     <div>
@@ -307,10 +357,10 @@ export default function IndexPage(props: any) {
                 </Grid.Column>
                 <Grid.Column mobile={3} >
                   <div>
-                    <Button href={`https://play.decentraland.org/?position=${scene.x}%2C${scene.x}`} primary inverted={!!reward} style={{ width: '100%' }} > {!reward ? 'Pending' : `Completed`} </Button>
+                    <Button href={`https://play.decentraland.org/?position=${scene.x}%2C${scene.y}`} primary inverted={!!reward} style={{ width: '100%' }} > {!reward ? 'Pending' : `Completed`} </Button>
                   </div>
                   <div style={{ paddingTop: '1rem' }}>
-                    {hasRewardItems && <Button href={`https://play.decentraland.org/?position=${scene.x}%2C${scene.x}`} primary={hasPendingRewardItems} style={{ width: '100%' }} > {hasPendingRewardItems ? 'Claim' : 'Claimed'} </Button>}
+                    {hasRewardItems && <Button href={`https://play.decentraland.org/?position=${scene.x}%2C${scene.y}`} primary={hasPendingRewardItems} style={{ width: '100%' }} > {hasPendingRewardItems ? 'Claim' : 'Claimed'} </Button>}
                   </div>
                 </Grid.Column>
               </Grid.Row>

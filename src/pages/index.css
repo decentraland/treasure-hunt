@@ -176,7 +176,6 @@ body {
 .ui.container.scenes .reward.common img {
   border-color: #bed2d2;
 }
-
 .ui.container.scenes .reward.common .label {
   background-color: #bed2d2;
 }
@@ -184,25 +183,38 @@ body {
 .ui.container.scenes .reward.uncommon img {
   border-color: #ff8563;
 }
-
+.ui.container.scenes .reward.uncommon .label {
+  background-color: #ff8563;
+}
 .ui.container.scenes .reward.swanky img {
   border-color: #3ad682;
 }
-
+.ui.container.scenes .reward.swanky .label {
+  background-color: #3ad682;
+}
 .ui.container.scenes .reward.epic img {
   border-color: #6397f2;
 }
-
+.ui.container.scenes .reward.epic .label {
+  background-color: #6397f2;
+}
 .ui.container.scenes .reward.legendary img {
   border-color: #a657ed;
 }
-
+.ui.container.scenes .reward.legendary .label {
+  background-color: #a657ed;
+}
 .ui.container.scenes .reward.mythic img {
   border-color: #ff63e1;
 }
-
+.ui.container.scenes .reward.mythic .label {
+  background-color: #ff63e1;
+}
 .ui.container.scenes .reward.unique img {
   border-color: #ff63e1;
+}
+.ui.container.scenes .reward.unique .label {
+  background-color: #ff63e1;
 }
 
 @media only screen and (max-width: 767px) {
