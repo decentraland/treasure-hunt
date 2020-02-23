@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: `/treasure-hunt`,
   siteMetadata: {
     title: `Decentraland DAO`,
     description: `Decentraland DAO`,

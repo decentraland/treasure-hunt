@@ -32,7 +32,7 @@ export default function HTML(props) {
         />
         {props.postBodyComponents}
 
-        <Segment analyticsKey="7qBT3z1TmRolRDSyscr3YzxDxqrWZMGF" />
+        <Segment analyticsKey="Rzy23gmm1yCKN4zdltOfIJvsLKr5aufE" />
       </body>
     </html>
   )

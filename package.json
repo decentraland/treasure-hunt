@@ -62,7 +62,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build --prefix-paths /treasure-hunt/",
+    "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
