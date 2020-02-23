@@ -158,14 +158,27 @@ body {
   height: 125px;
 }
 
+.ui.container.scenes .reward .name,
 .ui.container.scenes .reward .label {
   position: absolute;
-  bottom: 0;
-  right: 0;
-  padding: 0rem 0.4rem 0.2rem;
+  padding: 0.2rem 0.4rem;
   border-radius: 8px 0 8px 0;
   font-weight: bold;
   color: white;
+}
+
+.ui.container.scenes .reward .name {
+  top: 0;
+  left: 0;
+  max-width: 90%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.ui.container.scenes .reward .label {
+  bottom: 0;
+  right: 0;
 }
 
 .ui.container.scenes .reward img {
@@ -174,45 +187,60 @@ body {
 }
 
 .ui.container.scenes .reward.common img {
+  background-color: #bed2d2;
   border-color: #bed2d2;
 }
+
+.ui.container.scenes .reward.common .name,
 .ui.container.scenes .reward.common .label {
   background-color: #bed2d2;
 }
 
 .ui.container.scenes .reward.uncommon img {
+  background-color: #ff8563;
   border-color: #ff8563;
 }
+.ui.container.scenes .reward.uncommon .name,
 .ui.container.scenes .reward.uncommon .label {
   background-color: #ff8563;
 }
 .ui.container.scenes .reward.swanky img {
+  background-color: #3ad682;
   border-color: #3ad682;
 }
+.ui.container.scenes .reward.swanky .name,
 .ui.container.scenes .reward.swanky .label {
   background-color: #3ad682;
 }
 .ui.container.scenes .reward.epic img {
+  background-color: #6397f2;
   border-color: #6397f2;
 }
+.ui.container.scenes .reward.epic .name,
 .ui.container.scenes .reward.epic .label {
   background-color: #6397f2;
 }
 .ui.container.scenes .reward.legendary img {
+  background-color: #a657ed;
   border-color: #a657ed;
 }
+.ui.container.scenes .reward.legendary .name,
 .ui.container.scenes .reward.legendary .label {
   background-color: #a657ed;
 }
 .ui.container.scenes .reward.mythic img {
+  background-color: #ff63e1;
   border-color: #ff63e1;
 }
+.ui.container.scenes .reward.mythic .name,
 .ui.container.scenes .reward.mythic .label {
   background-color: #ff63e1;
 }
 .ui.container.scenes .reward.unique img {
+  background-color: #ff63e1;
   border-color: #ff63e1;
 }
+.ui.container.scenes .reward.unique .name,
 .ui.container.scenes .reward.unique .label {
   background-color: #ff63e1;
 }

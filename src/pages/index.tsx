@@ -348,9 +348,10 @@ export default function IndexPage(props: any) {
                     </div>
                     <div>
                       {hasRewards && rewardsItems.length > 0 && <div>{rewardsItems.map(item => {
-                        return <div className={['reward', item.rarity || 'common'].join(' ')}>
+                        return <div className={['reward', item.rarity || 'common'].join(' ')} title={item.tokens.title}>
+                          <div className="name">{item.tokens.title}</div>
                           <div className="label">{item.rarity || 'common'}</div>
-                          <img src={item.tokens.image} width={125} height={125} style={{}} />
+                          <img src={item.tokens.image} width={125} height={125} />
                         </div>
                       })}</div>}
                     </div>
