@@ -206,6 +206,19 @@ export default function IndexPage(props: any) {
     setState({ ...state, filter: data.value as any })
   }
 
+  const sceneList = state.data && scenes
+    .filter(scene => {
+      const reward = state.data?.get(scene.name)
+      const hasPendingRewardItems = !(reward?.rewardItems || []).some(item => item.completed)
+      switch (state.filter) {
+        case 'PENDING': return !reward
+        case 'COMPLETED': return !!reward
+        case 'CLAIMED': return !!reward && !hasPendingRewardItems
+        case 'UNCLAIMED': return !!reward && hasPendingRewardItems
+        default: return true
+      }
+    })
+
   return (
     <Layout {...props}>
       <SEO
@@ -260,57 +273,48 @@ export default function IndexPage(props: any) {
                 </Label>
               </Grid.Column>
             </Grid.Row>}
-            {state.data && scenes
-              .filter(scene => {
-                const reward = state.data?.get(scene.name)
-                const hasPendingRewardItems = !(reward?.rewardItems || []).some(item => item.completed)
-                switch (state.filter) {
-                  case 'COMPLETED': return !!reward
-                  case 'PENDING': return !reward
-                  case 'CLAIMED': return !hasPendingRewardItems
-                  case 'UNCLAIMED': return hasPendingRewardItems
-                  default: return true
-                }
-              })
-              .map((scene) => {
-                const reward = state.data?.get(scene.name)
-                const hasRewards = !!reward
-                const hasRewardItems = reward?.rewardItems && reward.rewardItems.length > 0
-                const rewardsItems = (reward?.rewardItems || [])
-                const hasPendingRewardItems = !rewardsItems.some(item => item.completed)
-                return <Grid.Row key={scene.name} verticalAlign="top">
-                  <Grid.Column mobile={4}>
-                    <div style={{ background: `url("https://api.decentraland.org/v1/parcels/${scene.x}/${scene.y}/map.png") center center` }}>
-                      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNiYAAAAAkAAxkR2eQAAAAASUVORK5CYII=" width={500} height={500} style={{ maxWidth: '200px', width: '100%', height: 'auto' }} />
-                    </div>
-                    {/* <img src={`https://api.decentraland.org/v1/parcels/${scene.x}/${scene.y}/map.png`} width={500} height={500} style={{ maxWidth: '300px', width: '100%', height: 'auto' }} /> */}
-                  </Grid.Column>
-                  <Grid.Column mobile={9} style={{ height: '100%' }}>
-                    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
-                      <div>
-                        <SubTitle>{scene.name} <Link href={`https://play.decentraland.org/?position=${scene.x}%2C${scene.x}`}>({scene.x},{scene.x})</Link></SubTitle>
-                        {hasRewards && rewardsItems.length === 0 && <div><Paragraph secondary>Sorry! This chest was empty</Paragraph></div>}
-                      </div>
-                      <div>
-                        {hasRewards && rewardsItems.length > 0 && <div>{rewardsItems.map(item => {
-                          return <div className={['reward', item.rarity || 'common'].join(' ')}>
-                            <div className="label">{item.rarity || 'common'}</div>
-                            <img src={item.tokens.image} width={125} height={125} style={{}} />
-                          </div>
-                        })}</div>}
-                      </div>
-                    </div>
-                  </Grid.Column>
-                  <Grid.Column mobile={3} >
+            {sceneList && sceneList.length === 0 && <div style={{ padding: '5rem 0', textAlign: 'center', width: '100%' }}>
+              <Paragraph secondary>There are no scenes to show</Paragraph>
+            </div>}
+            {sceneList && sceneList.map((scene) => {
+              const reward = state.data?.get(scene.name)
+              const hasRewards = !!reward
+              const hasRewardItems = reward?.rewardItems && reward.rewardItems.length > 0
+              const rewardsItems = (reward?.rewardItems || [])
+              const hasPendingRewardItems = !rewardsItems.some(item => item.completed)
+              return <Grid.Row key={scene.name} verticalAlign="top">
+                <Grid.Column mobile={4}>
+                  <div style={{ background: `url("https://api.decentraland.org/v1/parcels/${scene.x}/${scene.y}/map.png") center center` }}>
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNiYAAAAAkAAxkR2eQAAAAASUVORK5CYII=" width={500} height={500} style={{ maxWidth: '200px', width: '100%', height: 'auto' }} />
+                  </div>
+                  {/* <img src={`https://api.decentraland.org/v1/parcels/${scene.x}/${scene.y}/map.png`} width={500} height={500} style={{ maxWidth: '300px', width: '100%', height: 'auto' }} /> */}
+                </Grid.Column>
+                <Grid.Column mobile={9} style={{ height: '100%' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
                     <div>
-                      <Button href={`https://play.decentraland.org/?position=${scene.x}%2C${scene.x}`} primary inverted={!!reward} style={{ width: '100%' }} > {!reward ? 'Pending' : `Completed`} </Button>
+                      <SubTitle>{scene.name} <Link href={`https://play.decentraland.org/?position=${scene.x}%2C${scene.x}`}>({scene.x},{scene.x})</Link></SubTitle>
+                      {hasRewards && rewardsItems.length === 0 && <div><Paragraph secondary>Sorry! This chest was empty</Paragraph></div>}
                     </div>
-                    <div style={{ paddingTop: '1rem' }}>
-                      {hasRewardItems && <Button href={`https://play.decentraland.org/?position=${scene.x}%2C${scene.x}`} primary={hasPendingRewardItems} style={{ width: '100%' }} > {hasPendingRewardItems ? 'Claim' : 'Claimed'} </Button>}
+                    <div>
+                      {hasRewards && rewardsItems.length > 0 && <div>{rewardsItems.map(item => {
+                        return <div className={['reward', item.rarity || 'common'].join(' ')}>
+                          <div className="label">{item.rarity || 'common'}</div>
+                          <img src={item.tokens.image} width={125} height={125} style={{}} />
+                        </div>
+                      })}</div>}
                     </div>
-                  </Grid.Column>
-                </Grid.Row>
-              })}
+                  </div>
+                </Grid.Column>
+                <Grid.Column mobile={3} >
+                  <div>
+                    <Button href={`https://play.decentraland.org/?position=${scene.x}%2C${scene.x}`} primary inverted={!!reward} style={{ width: '100%' }} > {!reward ? 'Pending' : `Completed`} </Button>
+                  </div>
+                  <div style={{ paddingTop: '1rem' }}>
+                    {hasRewardItems && <Button href={`https://play.decentraland.org/?position=${scene.x}%2C${scene.x}`} primary={hasPendingRewardItems} style={{ width: '100%' }} > {hasPendingRewardItems ? 'Claim' : 'Claimed'} </Button>}
+                  </div>
+                </Grid.Column>
+              </Grid.Row>
+            })}
             {/* <Grid.Row>
               <Grid.Column mobile={7} className="image">
                 <img src={whatIs} width="1024" height="1024" />
