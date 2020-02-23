@@ -1,8 +1,8 @@
 module.exports = {
   pathPrefix: `/treasure-hunt`,
   siteMetadata: {
-    title: `Decentraland DAO`,
-    description: `Decentraland DAO`,
+    title: `Decentraland Treasure Hunt`,
+    description: `Check your progress with your wallet`,
     author: `@decentraland`,
   },
   plugins: [
