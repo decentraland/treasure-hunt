@@ -73,6 +73,7 @@ const images: { [key: string]: string | undefined } = {
   'Midas Car Park': require("../images/Midas Car Park.jpg"),
   'MoonShot': require("../images/MoonShot.jpg"),
   'Museum District ': require("../images/Museum District.jpg"),
+  'Mystery Castle': require("../images/Mystery Castle.jpg"),
   'Neo DCL City': require("../images/Neo DCL City.jpg"),
   'Present Predicament': require("../images/Present Predicament.jpg"),
   'Quest of an Alcoholic Scarecrow': require("../images/Quest of an Alcoholic Scarecrow.jpg"),
@@ -333,13 +334,13 @@ export default function IndexPage(props: any) {
               const hasPendingRewardItems = !rewardsItems.some(item => item.completed)
               const image = images[scene.name as any] as any || `https://api.decentraland.org/v1/parcels/${scene.x}/${scene.y}/map.png`
               return <Grid.Row key={scene.name} verticalAlign="top">
-                <Grid.Column mobile={4}>
+                <Grid.Column mobile={5}>
                   <div style={{ background: `url("${image}") center center`, backgroundSize: 'cover' }}>
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNiYAAAAAkAAxkR2eQAAAAASUVORK5CYII=" width={500} height={500} style={{ maxWidth: '200px', width: '100%', height: 'auto' }} />
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABAQMAAADO7O3JAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAADUExURUdwTIL60tIAAAABdFJOUwBA5thmAAAACklEQVQIHWNgAAAAAgABz8g15QAAAABJRU5ErkJggg==" width={1920} height={960} style={{ width: '100%', height: 'auto' }} />
                   </div>
                   {/* <img src={`https://api.decentraland.org/v1/parcels/${scene.x}/${scene.y}/map.png`} width={500} height={500} style={{ maxWidth: '300px', width: '100%', height: 'auto' }} /> */}
                 </Grid.Column>
-                <Grid.Column mobile={9} style={{ height: '100%' }}>
+                <Grid.Column mobile={8} style={{ height: '100%' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
                     <div>
                       <SubTitle>{scene.name} <Link href={`https://play.decentraland.org/?position=${scene.x}%2C${scene.y}`}>({scene.x},{scene.y})</Link></SubTitle>
