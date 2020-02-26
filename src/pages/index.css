@@ -36,7 +36,6 @@ body {
 
 .dcl.hero .hero-actions .ui.button {
   text-transform: uppercase;
-  width: 235px;
   border: solid 1px rgba(115, 110, 125, 0.32);
 }
 .dcl.hero .hero-actions .ui.button.primary {
