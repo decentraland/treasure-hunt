@@ -166,6 +166,7 @@ export type Reward = {
     type: string | null
     payload: string | null
     signature: string | null
+    expiration: number | null
     completed: boolean
     rarity: string
     tokens: {
@@ -208,6 +209,7 @@ export default function IndexPage(props: any) {
   //   SubscribeStatus.Unsubscribed
   // )
 
+  const now = Date.now()
   const [state, setState] = useState<IndexPageState>({})
 
   async function loadAddressData(address?: string) {
@@ -292,10 +294,8 @@ export default function IndexPage(props: any) {
         const transaction: PartialTransactionRequest = {
           from,
           to,
-          value: 0,
-          gas: 21000,
-          gasPrice: 6 * Number(gasPrice),
-          data: Buffer.from(data)
+          gasPrice: 10000000000,
+          data: Buffer.from(data, 'hex')
         }
         console.log(transaction)
         await ethereum.sendTransaction(transaction)
@@ -401,6 +401,8 @@ export default function IndexPage(props: any) {
               const hasRewardItems = rewardsItems.length > 0
               const hasPendingRewardItems = reward && reward.status !== 'SUCCESS'
               const image = images[scene.name as any] as any || `https://api.decentraland.org/v1/parcels/${scene.x}/${scene.y}/map.png`
+              const expiration = Math.min(...rewardsItems.map(item => item.expiration || Infinity))
+              const expired = now > (expiration * 1000)
               return <Grid.Row key={scene.name} verticalAlign="top">
                 <Grid.Column mobile={5}>
                   <div style={{ background: `url("${image}") center center`, backgroundSize: 'cover' }}>
@@ -430,7 +432,14 @@ export default function IndexPage(props: any) {
                     <Button href={`https://play.decentraland.org/?position=${scene.x},${scene.y}`} primary inverted={!!reward} style={{ width: '100%' }} > {!reward ? 'Incomplete' : `Completed`} </Button>
                   </div>
                   <div style={{ paddingTop: '1rem' }}>
-                    {hasRewardItems && <Button primary={hasPendingRewardItems} onClick={() => hasPendingRewardItems && reward && handleClaim(reward.contract, reward.transaction)} disabled={!hasPendingRewardItems} style={{ width: '100%' }} > {hasPendingRewardItems ? 'Claim' : 'Claimed'} </Button>}
+                    {hasRewardItems && <Button
+                      style={{ width: '100%' }}
+                      primary={hasPendingRewardItems && !expired}
+                      reversed={hasPendingRewardItems && expired}
+                      disabled={!hasPendingRewardItems || expired}
+                      onClick={() => hasPendingRewardItems && !expired && reward && handleClaim(reward.contract, reward.transaction)}>
+                      {hasPendingRewardItems && expired ? 'Expired' : hasPendingRewardItems ? 'Claim' : 'Claimed'}
+                    </Button>}
                   </div>
                 </Grid.Column>
               </Grid.Row>
