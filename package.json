@@ -51,7 +51,7 @@
     "react-tile-map": "^0.3.1",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.88.1",
-    "three": "^0.112.1",
+    "three": "^0.137.0",
     "typed.js": "^2.0.11",
     "typescript": "^3.7.3",
     "validator": "^12.0.0",
